@@ -4,7 +4,7 @@ import IMG_SHUFFLE from "@/public/images/shuffle.png";
 import IMG_SAVE from "@/public/images/save.png";
 import IMG_SAVE_FILL from "@/public/images/save-fill.png";
 import Image from "next/image";
-import { Fragment, SubmitEventHandler, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { getPokemon, getPokemonLite, LS } from "@/lib/common";
 import { Favorite, PokeData, Resource } from "@/lib/interfaces";
 
@@ -33,10 +33,11 @@ export default function Main() {
   }
 
   function cbFAV() {
-    if (FAV!.some(({ num }) => num === CUR?.res_pokemon?.num)) {
-      setFAV(FAV!.filter(({ num }) => num !== CUR?.res_pokemon?.num));
+    if (!CUR) return;
+    if (FAV!.some(({ num }) => num === CUR.res_pokemon?.num)) {
+      setFAV(FAV!.filter(({ num }) => num !== CUR.res_pokemon?.num));
     } else {
-      setFAV([...FAV!, { ...CUR?.res_pokemon!, name: CUR?.name_pokemon! }]);
+      setFAV([...FAV!, { ...CUR.res_pokemon!, name: CUR.name_pokemon! }]);
     }
   }
 
@@ -163,7 +164,7 @@ export default function Main() {
                     <>
                       {EVO.map((val, idx) => (
                         <Fragment key={idx}>
-                          <div onClick={() => { cbSwitch(val.res_pokemon?.num!, val.res_pokemon?.str!); }}>
+                          <div onClick={() => { cbSwitch(val.res_pokemon!.num!, val.res_pokemon!.str!); }}>
                             <Image
                               width={256}
                               height={256}

@@ -38,12 +38,12 @@ export interface APIResource {
   url: string,
 }
 
-export interface Description { }
-export interface Effect { }
-export interface Encounter { }
-export interface FlavorText { }
-export interface GenerationGameIndex { }
-export interface MachineVersionDetail { }
+export interface Description { _: any }
+export interface Effect { _: any }
+export interface Encounter { _: any }
+export interface FlavorText { _: any }
+export interface GenerationGameIndex { _: any }
+export interface MachineVersionDetail { _: any }
 
 export interface Name {
   name: string,
@@ -55,10 +55,10 @@ export interface NamedAPIResource {
   url: string,
 }
 
-export interface VerboseEffect { }
-export interface VersionEncounterDetail { }
-export interface VersionGameIndex { }
-export interface VersionGroupFlavorText { }
+export interface VerboseEffect { _: any }
+export interface VersionEncounterDetail { _: any }
+export interface VersionGameIndex { _: any }
+export interface VersionGroupFlavorText { _: any }
 
 // EVOLUTION =======================================================================================
 
