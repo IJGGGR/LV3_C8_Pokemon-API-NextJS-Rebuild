@@ -28,7 +28,7 @@ export default function Main() {
   }
 
   function cbRNG() {
-    const rng = Math.floor(Math.random() * 1025) + 1;
+    const rng = Math.floor(Math.random() * 649) + 1;
     setSTR(`${rng}`);
   }
 
